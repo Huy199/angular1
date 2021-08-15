@@ -12,13 +12,11 @@ export const selectValue = createSelector(
 export const selectIncrementCount = createSelector(
   selectCounter,
   counterState => counterState.incrementCount
-
 );
 
 export const  selectDecrementCount = createSelector(
   selectCounter,
   (counterState) => counterState.decrementCount
-
 );
 
 

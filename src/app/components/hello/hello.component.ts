@@ -11,20 +11,19 @@ import { decrement, increment } from './store/hello.action';
   styleUrls: ['./hello.component.scss']
 })
 export class HelloComponent implements OnInit  {
+  readonly value$ = this.store.select(selectValue);
+  readonly incrementCount$ = this.store.select(selectIncrementCount);
+  readonly decrementCount$ = this.store.select(selectDecrementCount);
 
-readonly value$ = this.store.select(selectValue);
-readonly incrementCount$ = this.store.select(selectIncrementCount);
-readonly decrementCount$ = this.store.select(selectDecrementCount);
+  constructor(private readonly store: Store){}
 
-constructor(private readonly store: Store){}
+  ngOnInit(): void {}
 
-ngOnInit(): void {}
-
-decrement(){
-  this.store.dispatch(decrement());
-}
-increment(){
-  this.store.dispatch(increment());
-}
+  decrement(){
+    this.store.dispatch(decrement());
+  }
+  increment(){
+    this.store.dispatch(increment());
+  }
 
 }
