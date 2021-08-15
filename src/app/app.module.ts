@@ -25,6 +25,7 @@ import { HelloModule} from './components/hello/hello.module';
       logOnly: environment.production
     }),
     HelloModule,
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
 
   ],
 
